@@ -1,104 +1,84 @@
-<html>
-<head>
-<title>mikrotik hotspot > status</title>
-$(if refresh-timeout)
-<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
-$(endif)
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
-<style type="text/css">
-<!--
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
-}
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>My Page</title>
+  $(if refresh-timeout)
+  <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+  $(endif)
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="-1">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="jqm/jquery.mobile-1.3.1.css" />
+  <script src="jqm/jquery-1.9.1.min.js"></script>
+  <script src="jqm/jquery.mobile-1.3.1.min.js"></script>
+    <script language="JavaScript">
+        <!--
+            $(if advert-pending == 'yes')
+        var popup = '';
+        function focusAdvert() {
+            if (window.focus) popup.focus();
+        }
+        function openAdvert() {
+            popup = open('$(link-advert)', 'hotspot_advert', '');
+            setTimeout("focusAdvert()", 1000);
+        }
+        $(endif)
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+        }
+        //-->
+    </script>
+</head> 
+<body  bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0" $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
 
-.tabula{
- 
-border-width: 1px; 
-border-collapse: collapse; 
-border-color: #c1c1c1; 
-background-color: transparent;
-font-family: verdana;
-font-size: 11px;
-}
+<div data-role="page">
 
-body{ color: #737373; font-size: 12px; font-family: verdana; }
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; padding: 4px;}
-
--->
-</style>
-<script language="JavaScript">
-<!--
-$(if advert-pending == 'yes')
-    var popup = '';
-    function focusAdvert() {
-	if (window.focus) popup.focus();
-    }
-    function openAdvert() {
-	popup = open('$(link-advert)', 'hotspot_advert', '');
-	setTimeout("focusAdvert()", 1000);
-    }
-$(endif)
-    function openLogout() {
-	if (window.name != 'hotspot_status') return true;
-        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
-	window.close();
-	return false;
-    }
-//-->
-</script>
-</head>
-<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
-$(if advert-pending == 'yes')
-	onLoad="openAdvert()"
-$(endif)
->
-<table width="100%" height="100%">
-
-<tr>
-<td align="center" valign="middle">
+  <div data-role="header" data-position="fixed">
+    <h1>WLAHAR WETAN WIFI</h1>
+  </div><!-- /header -->
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
-<table border="1" class="tabula">
 $(if login-by == 'trial')
-	<br><div style="text-align: center;">Welcome trial user!</div><br>
+	<br><div style="text-align: center;">Selamat Datang Pengguna Internet Gratis<br> Desa Wlahar Wetan!</div>
 $(elif login-by != 'mac')
-	<br><div style="text-align: center;">Welcome $(username)!</div><br>
+	<br><div style="text-align: center;">Selamat Datang $(username)!</div><br>
 $(endif)
-	<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
-	<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
-$(if session-time-left)
-	<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
-$(else)
-	<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
-$(endif)
-$(if blocked == 'yes')
-	<tr><td align="right">status:</td><td><div style="color: #FF8080">
-<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
-$(elif refresh-timeout)
-	<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
-$(endif)
+  <div data-role="content">     
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">STATUS DATA</li>
+      <li>IP address: $(ip)</li>
+      <li>bytes up/down: $(bytes-in-nice) / $(bytes-out-nice)</li>
+      $(if session-time-left)
+      <li>connected / left: $(uptime) / $(session-time-left)</li>
+      $(else)
+      <li>connected: $(uptime)</li>
+      $(endif)
+      $(if blocked == 'yes')
+      <li>status: <a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</li>
+      $(elif refresh-timeout)
+      <li>status refresh: $(refresh-timeout)</li>
+      $(endif)
+    </ul>
+    $(if login-by-mac != 'yes')
+    $(endif)
+    <a href="#" data-role="button">KELUAR</a>
 
-</table>
-$(if login-by-mac != 'yes')
-<br>
-<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
-<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
-<!-- end of user manager link -->
-<input type="submit" value="log off">
-$(endif)
+  </div><!-- /content -->
 </form>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" class="ui-btn-active ui-state-persist">Ditenagai oleh MikroTik RouterOS</a></li>
+      </ul>
+    </div>
+  </div>
 
-</td>
-</table>
+</div><!-- /page -->
+
 </body>
 </html>
