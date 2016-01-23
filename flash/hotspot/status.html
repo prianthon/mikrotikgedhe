@@ -1,7 +1,7 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <title>My Page</title>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internet > Wlahar Wetan</title>
   $(if refresh-timeout)
   <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
@@ -34,7 +34,7 @@
         }
         //-->
     </script>
-</head> 
+</head>
 <body  bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0" $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
 
 <div data-role="page">
@@ -48,7 +48,7 @@ $(if login-by == 'trial')
 $(elif login-by != 'mac')
 	<br><div style="text-align: center;">Selamat Datang $(username)!</div><br>
 $(endif)
-  <div data-role="content">     
+  <div data-role="content">
     <ul data-role="listview" data-inset="true">
       <li data-role="list-divider">STATUS DATA</li>
       <li>IP address: $(ip)</li>
