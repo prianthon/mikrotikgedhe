@@ -40,7 +40,7 @@
 <div data-role="page">
 
   <div data-role="header" data-position="fixed">
-    <h1>WLAHAR WETAN WIFI</h1>
+    <h1>HOTSPOT</h1>
   </div><!-- /header -->
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 $(if login-by == 'trial')
@@ -66,7 +66,7 @@ $(endif)
     </ul>
     $(if login-by-mac != 'yes')
     $(endif)
-    <a href="#" data-role="button">KELUAR</a>
+    <input class="btn btn-warning" type="submit" value="KELUAR">
 
   </div><!-- /content -->
 </form>
