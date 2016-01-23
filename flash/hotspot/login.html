@@ -1,218 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Wlahar Wetan > Internet</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--script css bootstrap-->
-  <link rel="stylesheet" href="bs/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bs/css/bootstrap.css">
-  <link rel="stylesheet" href="bs/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="bs/css/bootstrap-theme.css">
-  <!--script css bootstrap-->
-  <!--script js bootstrap-->
-  <script src="bs/js/jquery.min.js"></script>
-  <script src="bs/js/bootstrap.min.js"></script>
-  <script src="bs/js/bootstrap.js"></script>
-  <script src="bs/js/npm.js"></script>
-  <!--script js bootstrap-->
+  <title>INTERNET</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="jqm/jquery.mobile-1.3.1.css" />
+  <script src="jqm/jquery-1.9.1.min.js"></script>
+  <script src="jqm/jquery.mobile-1.3.1.min.js"></script>
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+  <script src="leaflet/leaflet.js"></script>
   <style>
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 10px;
-    }
-
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      min-height: 200px;
-    }
-
-    /* Hide the carousel text when the screen is less than 600 pixels wide */
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none; 
-      }
-    }
+    #map { height: 180px; }
   </style>
 </head>
 <body>
-<!--menu navigasi-->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Desa Wlahar Wetan</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <!--<li class="active"><a href="#">Beranda</a></li>
-        <li><a href="#">Profil Desa</a></li>
-        <li><a href="#">Kontak</a></li>-->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-right">
-            <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
-            <input type="hidden" name="dst" value="$(link-orig)" />
-            <input type="hidden" name="popup" value="true" />
-            <div class="form-group">
-                <li><input name="username" type="text" value="$(username)" class="form-control" placeholder="Nama Pengguna"></li>
-            </div>
-            <div class="form-group">
-                <li><input type="password" name="password" class="form-control" placeholder="Kata Sandi"></li>
-            </div>
-            <div class="form-group">
-                <li><input type="submit" class="btn btn-warning" value="MASUK"></li>
-            </div>
-            </form>
-        </form>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!--menu navigasi-->
-<!--slider-->
-<br><br><br><br><br>
-<div class="container">
-<div class="row">
-  <div class="col-sm-8">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-      </ol>
 
-      <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="img/wwdesaid.png" alt="Image">
-          <div class="carousel-caption">
-            <!--<h3>http://wlaharwetan.desa.id</h3>
-            <p>Desa bersuara</p>-->
-          </div>      
-        </div>
+<div data-role="page">
 
-        <div class="item">
-          <img src="img/perangkatx.jpg" alt="Image">
-          <div class="carousel-caption">
-            <!--<h3>More Sell $</h3>
-            <p>Lorem ipsum...</p>-->
-          </div>      
-        </div>
-      </div>
+  <div data-role="header" data-position="fixed">
+    <h1>INTERNET</h1>
+  </div><!-- /header -->
 
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="well">
-        <h3>Internet Cepat dan Aman<strong> <br><kbd>GRATIS</kbd></strong> 9 Jam/hari</h3><br>
-    </div>
-    <div class="well">
-       $(if trial == 'yes')
-       <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><img src="img/btn.png" class="img-responsive" style="width:100%" alt="Internet Gratis"></a>
-       $(endif)
-    </div>
-  </div>
-</div>
+  <div class="ui-body">
+    <h1>Selamat Datang</h1>
+    <p>di Internet Desa Wlahar Wetan. Desa kami masuk kecamatan kalibagor, kabupaten banyumas. Internet ini merupakan media resmi Pemerintah Desa (PemDes) Wlahar Wetan dan semoga dapat bermanfaat bagi semua pihak.</p>
     <div align="center">$(if error)<br /><div style="color: #FF8080; font-size: 15px">$(error)</div>$(endif)</div>
-<hr>
-</div>
-<!--slider-->
-<!--potensi dan produk-->
-<div class="container text-center">    
-  <h3>Potensi dan Produk</h3>
-  <br>
-  <div class="row">
-    <div class="col-sm-3">
-      <img src="img/TahuWlaharWetan.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Tahu Gurih</p>
+    <div data-role="collapsible" data-collapsed="true" data-theme="a">
+      <h3>Internet Cepat</h3>
+      <p><p><strong>Masuk</strong> dengan akun terdaftar memiliki akses internet tak terbatas kecepatan dan waktu penggunaan, hanya dengan memasukkan nama pengguna dan kata sandi, untuk info lebih lanjut dapat menghubungi admin desa wlahar wetan melalui alamat e-mail <strong>info@wlaharwetan.desa.id</strong></p>
+      <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+        <label for="name-c">Nama Pengguna:</label>
+        <input name="username" type="text" value="$(username)" class="form-control" placeholder="Nama Pengguna">
+        <label for="name-c">Kata Sandi:</label>
+        <input type="password" name="password" class="form-control" placeholder="Kata Sandi"><br>
+        <input class="btn btn-warning" type="submit" value="MASUK">
+      </form
+      </p>
+    </div><!-- /collapsible -->
+    <div data-role="collapsible" data-theme="a" data-content-theme="a">
+      <h3>Internet Gratis</h3>
+      <p><p><strong>Masuk</strong> dengan akun bebas memiliki akses internet cepat 256kbps dan terbatas waktu 9 jam/hari, tidak perlu repot memasukkan nama pengguna dan kata sandi, selamat berselancar.</p>
+      $(if trial == 'yes')
+      <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><input class="btn btn-warning" type="submit" value="GRATIS"></a>
+      $(endif)
+      </p>
     </div>
-    <div class="col-sm-3"> 
-      <img src="img/minox.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Kue Mino</p>    
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>  
   </div>
-  <hr>
-</div>
-<!--potensi dan produk-->
-<!--dukungan-->
-<div class="container text-center img-center">    
-  <h3>Dukungan</h3>
-  <br>
-  <div class="row">
-    <div class="col-sm-2">
-      <img src="img/gdm.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Gerakan Desa Membangun</p>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" class="ui-btn-active ui-state-persist">Ditenagai oleh MikroTik RouterOS</a></li>
+      </ul>
     </div>
-    <div class="col-sm-2"> 
-      <img src="img/pandi.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>PANDI</p>    
-    </div>
-    <div class="col-sm-2"> 
-      <img src="img/15080.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 3</p>
-    </div>
-    <div class="col-sm-2"> 
-      <img src="img/15080.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 4</p>
-    </div> 
-    <div class="col-sm-2"> 
-      <img src="img/15080.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 5</p>
-    </div>     
-    <div class="col-sm-2"> 
-      <img src="img/15080.png" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 6</p>
-    </div> 
   </div>
-</div><br>
-<!--dukungan-->
-<!--footer-->
-<footer class="container-fluid">
-    <div class="row">
-        <div class="col-sm-9">
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Lisensi Creative Commons" style="border-width:0" src="img/80x15.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"> Login Hotspot</span> oleh <a xmlns:cc="http://creativecommons.org/ns#" href="https://twitter.com/prianthon" property="cc:attributionName" rel="cc:attributionURL">@prianthon</a> disebarluaskan di bawah <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Lisensi Creative Commons Atribusi-BerbagiSerupa 4.0 Internasional</a>. Berdasarkan ciptaan pada <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/prianthon/mikrotikgedhe" rel="dct:source">https://github.com/prianthon/mikrotikgedhe</a>.
-        </div>
-        <div class="col-sm-3">
-	        <div style="color: #c1c1c1; font-size: 15px">Ditenagai oleh MikroTik RouterOS</div>
-        </div>
-    </div>
+
+</div><!-- /page -->
 <script type="text/javascript">
 <!--
   document.login.username.focus();
 //-->
 </script>
-</footer>
-<!--footer-->
 </body>
 </html>
