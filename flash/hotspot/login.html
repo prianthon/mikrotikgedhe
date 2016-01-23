@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <title>INTERNET</title>
+  <title>INTERNET > MASUK</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="expires" content="-1" />
@@ -37,7 +37,7 @@
 <div data-role="page">
 
   <div data-role="header" data-position="fixed">
-    <h1><a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)">INTERNET</a></h1>
+    <h1><a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)">INTERNET > MASUK</a></h1>
   </div><!-- /header -->
 
   <div class="ui-body">
@@ -47,15 +47,16 @@
     <div data-role="collapsible" data-collapsed="true" data-theme="a">
       <h3>Internet Cepat</h3>
       <p><p><strong>Masuk</strong> dengan akun terdaftar memiliki akses internet tak terbatas kecepatan dan waktu penggunaan, hanya dengan memasukkan nama pengguna dan kata sandi, untuk info lebih lanjut dapat menghubungi admin desa wlahar wetan melalui alamat e-mail <strong>info@wlaharwetan.desa.id</strong></p>
-      <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+      <form name="login" action="$(link-login-only)" method="post"
+          $(if chap-id) onSubmit="return doLogin()" $(endif)>
         <input type="hidden" name="dst" value="$(link-orig)" />
         <input type="hidden" name="popup" value="true" />
         <label for="name-c">Nama Pengguna:</label>
-        <input name="username" type="text" value="$(username)" class="form-control" placeholder="Nama Pengguna">
+        <input name="username" type="text" value="$(username)" placeholder="Nama Pengguna">
         <label for="name-c">Kata Sandi:</label>
-        <input type="password" name="password" class="form-control" placeholder="Kata Sandi"><br>
-        <input class="btn btn-warning" type="submit" value="MASUK">
-      </form
+        <input type="password" name="password" placeholder="Kata Sandi"><br>
+        <input type="submit" value="MASUK">
+      </form>
       </p>
     </div><!-- /collapsible -->
     <div data-role="collapsible" data-theme="a" data-content-theme="a">

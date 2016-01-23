@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>INTERNET</title>
+  <title>INTERNET > STATUS</title>
   $(if refresh-timeout)
   <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
@@ -46,39 +46,39 @@
     </style>
     <script language="JavaScript">
         <!--
-            $(if advert-pending == 'yes')
-        var popup = '';
-        function focusAdvert() {
-            if (window.focus) popup.focus();
-        }
-        function openAdvert() {
-            popup = open('$(link-advert)', 'hotspot_advert', '');
-            setTimeout("focusAdvert()", 1000);
-        }
+        $(if advert-pending == 'yes')
+            var popup = '';
+            function focusAdvert() {
+          if (window.focus) popup.focus();
+            }
+            function openAdvert() {
+          popup = open('$(link-advert)', 'hotspot_advert', '');
+          setTimeout("focusAdvert()", 1000);
+            }
         $(endif)
-        function openLogout() {
-            if (window.name != 'hotspot_status') return true;
+            function openLogout() {
+          if (window.name != 'hotspot_status') return true;
             open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
-            window.close();
-            return false;
-        }
+          window.close();
+          return false;
+            }
         //-->
     </script>
 </head>
 <body  bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
 $(if advert-pending == 'yes')
-onLoad="openAdvert()"
+  onLoad="openAdvert()"
 $(endif)
 >
 
 <div data-role="page">
 
   <div data-role="header" data-position="fixed">
-    <h1>INTERNET</h1>
+    <h1>INTERNET > STATUS</h1>
   </div><!-- /header -->
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 $(if login-by == 'trial')
-	<br><div style="text-align: center;">Selamat Datang Pengguna Internet Gratis<br> Desa Wlahar Wetan!</div>
+	<br><div style="text-align: center;">Selamat Datang Pengguna Internet Gratis<br> Desa Wlahar Wetan</div>
 $(elif login-by != 'mac')
 	<br><div style="text-align: center;">Selamat Datang $(username)!<br> di Internet Desa Wlahar Wetan</div>
 $(endif)
@@ -99,7 +99,10 @@ $(endif)
       $(endif)
     </ul>
     $(if login-by-mac != 'yes')
-    <input class="btn btn-warning" type="submit" value="KELUAR">
+    <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+    <!-- end of user manager link -->
+    <input type="submit" value="KELUAR">
 
   </div><!-- /content -->
     $(endif)

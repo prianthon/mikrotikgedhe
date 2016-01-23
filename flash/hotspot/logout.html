@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>mikrotik hotspot > logout</title>
+<title>INTERNET > KELUAR</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="-1">
@@ -30,6 +30,14 @@ font-family: verdana;
 font-size: 11px;
 }
 
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+
 body{ color: #737373; font-size: 12px; font-family: verdana; }
 
 a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
@@ -57,20 +65,20 @@ td { font-size: 12px; padding: 4px;}
 
 <tr>
 <td align="center" valign="middle">
-<b>you have just logged out</b> <br><br>
-<table class="tabula" border="1">
-<tr><td align="right">user name</td><td>$(username)</td></tr>
+<b>anda sudah keluar</b> <br><br>
+<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" border="1">
+<tr><td align="right">Nama pengguna</td><td>$(username)</td></tr>
 <tr><td align="right">IP address</td><td>$(ip)</td></tr>
 <tr><td align="right">MAC address</td><td>$(mac)</td></tr>
-<tr><td align="right">session time</td><td>$(uptime)</td></tr>
+<tr><td align="right">Sesi waktu</td><td>$(uptime)</td></tr>
 $(if session-time-left)
-<tr><td align="right">time left</td><td>$(session-time-left)</td></tr>
+<tr><td align="right">Sisa waktu</td><td>$(session-time-left)</td></tr>
 $(endif)
 <tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
 </table>
 <br>
 <form action="$(link-login)" name="login" onSubmit="return openLogin()">
-<input type="submit" value="log in">
+<input type="submit" value="MASUK">
 </form>
 </td>
 </table>
