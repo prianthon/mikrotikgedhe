@@ -14,6 +14,36 @@
   <link rel="stylesheet" href="jqm/jquery.mobile-1.3.1.css" />
   <script src="jqm/jquery-1.9.1.min.js"></script>
   <script src="jqm/jquery.mobile-1.3.1.min.js"></script>
+    <style type="text/css">
+    <!--
+    textarea,input,select {
+    background-color: #FDFBFB;
+    border: 1px #BBBBBB solid;
+    padding: 2px;
+    margin: 1px;
+    font-size: 14px;
+    color: #808080;
+    }
+
+    .tabula{
+
+    border-width: 1px;
+    border-collapse: collapse;
+    border-color: #c1c1c1;
+    background-color: transparent;
+    font-family: verdana;
+    font-size: 11px;
+    }
+
+    body{ color: #737373; font-size: 12px; font-family: verdana; }
+
+    a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+    a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+    img {border: none;}
+    td { font-size: 12px; padding: 4px;}
+
+    -->
+    </style>
     <script language="JavaScript">
         <!--
             $(if advert-pending == 'yes')
@@ -35,7 +65,11 @@
         //-->
     </script>
 </head>
-<body  bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0" $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
+<body  bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+$(if advert-pending == 'yes')
+onLoad="openAdvert()"
+$(endif)
+>
 
 <div data-role="page">
 
@@ -65,10 +99,10 @@ $(endif)
       $(endif)
     </ul>
     $(if login-by-mac != 'yes')
-    $(endif)
     <input class="btn btn-warning" type="submit" value="KELUAR">
 
   </div><!-- /content -->
+    $(endif)
 </form>
   <div data-role="footer" data-position="fixed">
     <div data-role="navbar">
